@@ -4,7 +4,8 @@ const chalk = require('chalk')
 //adds a note to the notes.json file, utilising the other methods in this file
 const addNote = (title,body) => {
     const notes = loadNotes()
-    const duplicateNote = notes.find((note)=>note.title)
+    const duplicateNote = notes.find((note)=> title===note.title)
+    console.log(duplicateNote)
 
     if (!duplicateNote) {
         notes.push({
